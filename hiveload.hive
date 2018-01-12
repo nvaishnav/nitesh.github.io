@@ -1,0 +1,38 @@
+use adynor;
+
+LOAD DATA LOCAL INPATH '/home/falguni/Documents/project/ITL_BRANCH.csv'
+OVERWRITE INTO TABLE itl_branch;
+
+LOAD DATA LOCAL INPATH '/home/falguni/Documents/project/ITL_CDR.csv'
+OVERWRITE INTO TABLE itl_cdr;
+
+LOAD DATA LOCAL INPATH '/home/falguni/Documents/project/ITL_CITY.csv'
+OVERWRITE INTO TABLE itl_city;
+
+LOAD DATA LOCAL INPATH '/home/falguni/Documents/project/ITL_CONNECTION_CANCELLATION.csv'
+OVERWRITE INTO TABLE ITL_CONNECTION_CANCELLATION;
+
+LOAD DATA LOCAL INPATH '/home/falguni/Documents/project/ITL_CONNECTION_SALE.csv'
+OVERWRITE INTO TABLE itl_connection_sales;
+
+LOAD DATA LOCAL INPATH '/home/falguni/Documents/project/ITL_CUSTOMER.csv'
+OVERWRITE INTO TABLE itl_customer;
+
+LOAD DATA LOCAL INPATH '/home/falguni/Documents/project/ITL_SIM.csv'
+OVERWRITE INTO TABLE itl_sim;
+
+LOAD DATA LOCAL INPATH '/home/falguni/Documents/project/ITL_SERVICE_TYPE.csv'
+OVERWRITE INTO TABLE itl_service_type;
+
+LOAD DATA LOCAL INPATH '/home/falguni/Documents/project/ITL_RATE_PLAN_CHARGE.csv'
+OVERWRITE INTO TABLE itl_rate_plan_charge;
+
+LOAD DATA LOCAL INPATH '/home/falguni/Documents/project/ITL_RATE_PLAN.csv'
+OVERWRITE INTO TABLE ITL_RATE_PLAN;
+
+
+
+
+
+
+

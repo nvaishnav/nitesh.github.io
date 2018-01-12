@@ -1,0 +1,55 @@
+drop database if exists adynor cascade;
+
+create database adynor;
+
+use adynor;
+
+create table itl_branch (BRANCH_CODE varchar(6), BRANCH_NAME varchar(15), CITY_CODE varchar(5)) row format delimited fields terminated by ',' LINES TERMINATED BY '\n' stored as textfile;
+
+create table itl_cdr (SERVICE_TYPE_ID varchar(4), usage_id int, service_usage int) row format delimited fields terminated by ',' LINES TERMINATED BY '\n' stored as textfile;
+
+create table itl_city (city_code varchar(5), city_name varchar(15) ) row format delimited fields terminated by ',' LINES TERMINATED BY '\n' stored as textfile;
+
+create table ITL_CONNECTION_CANCELLATION (CANCELLATION_REQUEST_ID int, CANCELLATION_DATE date, branch_code varchar(6), CANCELLATION_REASON varchar(40), request_status varchar(15), MOBILE_NO bigint, request_date date) row format delimited fields terminated by ',' LINES TERMINATED BY '\n' stored as textfile;
+
+create table ITL_CONNECTION_SALES(SALE_ID varchar(4), customer_no bigint, purchase_date date, branch_code varchar(6), mobile_no bigint) row format delimited fields terminated by ',' LINES TERMINATED BY '\n' stored as textfile;
+
+
+create table if not exists ITL_SIM(
+CUSTOMER_NO bigint,
+ACTIVATION_DT date,
+RATE_PLAN_ID varchar(10),
+CONN_TYPE varchar(10),
+CLOSED_DT date,
+MOBILE_NO bigint) row format delimited fields terminated by ',' LINES TERMINATED BY '\n' stored as textfile;
+
+create table if not exists ITL_SERVICE_TYPE(
+SERVICE_TYPE_ID varchar(4),
+SERVICE_TYPE_NAME varchar(10),
+UNIT varchar(10)) row format delimited fields terminated by ',' LINES TERMINATED BY '\n' stored as textfile;
+
+create table if not exists ITL_RATE_PLAN_CHARGE(
+RATE_PLAN_ID varchar(10),
+SERVICE_TYPE_ID varchar(4),
+UNIT_CHARGE decimal(5,2)) row format delimited fields terminated by ',' LINES TERMINATED BY '\n' stored as textfile;
+
+create table if not exists ITL_RATE_PLAN(
+RATE_PLAN_ID varchar(10),
+RATE_PLAN_NAME varchar(22),
+RATE_PLAN_START_DATE date,
+RATE_PLAN_END_DATE date,
+RATE_PLAN_RATE int) row format delimited fields terminated by ',' LINES TERMINATED BY '\n' stored as textfile;
+
+create table if not exists ITL_CUSTOMER(
+CUSTOMER_NO bigint,
+IS_CORPORATE_CUSTOMER BOOLEAN,
+CITY_CODE varchar(5),
+CREATED_DATE date) row format delimited fields terminated by ',' LINES TERMINATED BY '\n' stored as textfile;
+
+
+
+
+
+
+
+
